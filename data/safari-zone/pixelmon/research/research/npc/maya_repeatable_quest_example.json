@@ -7,7 +7,7 @@
           "condition": {
             "type": "pixelmon:true"
           },
-          "name": "Example Task: Catch 1 Pokemon",
+          "name": "Example Task: Catch 1 Pokemon (Repeatable)",
           "sprite": "pixelmon:textures/gui/research/pokeball.png",
           "result": [
             {
@@ -20,5 +20,6 @@
     }
   ],
   "repeatable": true,
-  "name": "Example Quest: Repeatable Capture"
+  "unique": false,
+  "name": "Example Quest: Maya Repeatable Capture"
 }

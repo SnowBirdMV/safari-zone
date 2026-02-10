@@ -53,7 +53,7 @@
               {
                 "type": "pixelmon:console_execute_command",
                 "commands": [
-                  "research give %player_name% safari-zone:npc/talk_to_professor"
+                  "research give %player_name% safari-zone:npc/maya_repeatable_quest_example"
                 ]
               },
               {
@@ -68,7 +68,7 @@
                 "type": "pixelmon:message_player",
                 "messages": [
                   {
-                    "text": "You received research: Example Quest: Basic Capture"
+                    "text": "You received research: Example Quest: Maya Repeatable Capture"
                   }
                 ]
               }
@@ -108,7 +108,7 @@
               "type": "pixelmon:interaction_condition",
               "condition": {
                 "type": "pixelmon:has_research",
-                "research": "safari-zone:npc/talk_to_professor",
+                "research": "safari-zone:npc/maya_repeatable_quest_example",
                 "player": {
                   "type": "pixelmon:context_player",
                   "key": "pixelmon:player"
@@ -167,7 +167,7 @@
                   "type": "pixelmon:interaction_condition",
                   "condition": {
                     "type": "pixelmon:has_research",
-                    "research": "safari-zone:npc/talk_to_professor",
+                    "research": "safari-zone:npc/maya_repeatable_quest_example",
                     "player": {
                       "type": "pixelmon:context_player",
                       "key": "pixelmon:player"

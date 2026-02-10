@@ -52,7 +52,7 @@
               {
                 "type": "pixelmon:console_execute_command",
                 "commands": [
-                  "research give %player_name% safari-zone:npc/assistant_repeat_capture"
+                  "research give %player_name% safari-zone:npc/maya_repeatable_quest_example"
                 ]
               },
               {
@@ -99,7 +99,7 @@
               "type": "pixelmon:interaction_condition",
               "condition": {
                 "type": "pixelmon:has_research",
-                "research": "safari-zone:npc/assistant_repeat_capture",
+                "research": "safari-zone:npc/maya_repeatable_quest_example",
                 "player": {
                   "type": "pixelmon:context_player",
                   "key": "pixelmon:player"
@@ -158,7 +158,7 @@
                   "type": "pixelmon:interaction_condition",
                   "condition": {
                     "type": "pixelmon:has_research",
-                    "research": "safari-zone:npc/assistant_repeat_capture",
+                    "research": "safari-zone:npc/maya_repeatable_quest_example",
                     "player": {
                       "type": "pixelmon:context_player",
                       "key": "pixelmon:player"
@@ -182,7 +182,7 @@
               {
                 "type": "pixelmon:console_execute_command",
                 "commands": [
-                  "research give %player_name% safari-zone:npc/assistant_repeat_capture"
+                  "research give %player_name% safari-zone:npc/maya_repeatable_quest_example"
                 ]
               }
             ]
