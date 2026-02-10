@@ -7,12 +7,12 @@
           "condition": {
             "type": "pixelmon:true"
           },
-          "name": "Example Task: Catch 1 Pokemon (Repeatable)",
+          "name": "Example Task: Catch 1 Pokemon (Independent)",
           "sprite": "pixelmon:textures/gui/research/pokeball.png",
           "result": [
             {
               "type": "pixelmon:give_money",
-              "money": 100
+              "money": 125
             }
           ]
         }
@@ -21,5 +21,5 @@
   ],
   "repeatable": true,
   "unique": true,
-  "name": "Example Quest: Maya Repeatable Capture"
+  "name": "Example Quest: Independent Repeatable Capture"
 }
