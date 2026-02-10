@@ -1,0 +1,20 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:false"
+          },
+          "name": "Example Task: Talk to Assistant Maya",
+          "sprite": "pixelmon:textures/gui/research/speech_bubble.png",
+          "result": []
+        }
+      ]
+    }
+  ],
+  "repeatable": false,
+  "unique": true,
+  "name": "Example Quest: NPC Handoff Chain"
+}

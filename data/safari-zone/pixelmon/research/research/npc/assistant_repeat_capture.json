@@ -12,13 +12,13 @@
           "result": [
             {
               "type": "pixelmon:give_money",
-              "money": 250
+              "money": 100
             }
           ]
         }
       ]
     }
   ],
-  "unique": true,
-  "name": "Example Quest: Basic Capture"
+  "repeatable": true,
+  "name": "Example Quest: Repeatable Capture"
 }
