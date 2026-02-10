@@ -1,0 +1,24 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:capture_pokemon",
+          "condition": {
+            "type": "pixelmon:true"
+          },
+          "name": "Catch 1 Pokemon",
+          "sprite": "pixelmon:textures/gui/research/pokeball.png",
+          "result": [
+            {
+              "type": "pixelmon:give_money",
+              "money": 250
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "unique": true,
+  "name": "Professor's First Assignment"
+}
