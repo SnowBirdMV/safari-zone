@@ -5,32 +5,29 @@ classDiagram
 class MapProgressionStart["Map Progression Start"]
 
 class WelcomeToTheSafari["Welcome to the Safari!"] {
-  NPC: Visitor Center Receptionist
+  NPC: Receptionist
   Area: Visitor Center
-  Starting Location: Visitor Center
-  Objective: Acquire Item
-  Objective Details: Purchase Safari Pass
+  Starting Location: Visitor Center lobby
+  Objective: Purchase a Safari Pass
   Quest Icon Sprite: pixelmon:textures/gui/research/money_pouch.png
   Reward: Nothing
-  Unlocks: Handing in the pass
+  Turn In NPC: Gate Receptionist
   NPC Model Texture: pixelmon:textures/steve/shoplady.png
   Description 1: Welcome to the safari! Please purchase your pass.
   Description 2: Then head downstairs toward the safari gate and give it to the clerk.
   Description 3: That lets you enter Timberland Village.
-  Talk Early: Welcome! Buy a Safari Pass at the front counter, then come back down to the gate.
   Talk Again Active: Take your pass underground and hand it to the ticket clerk at the booth.
   After Completion: Perfect. Your pass is ready to be handed in at the underground ticket gate.
 }
 
 class HandingInThePass["Handing in the pass"] {
-  NPC: Visitor Center Receptionist
+  NPC: Gate Receptionist
   Area: Visitor Center
-  Starting Location: Visitor Center, ticket gate underground
-  Objective: Turn In Item
-  Objective Details: Give Safari Pass to ticket clerk
+  Starting Location: Visitor Center ticket gate underground
+  Objective: Give the Safari Pass to the ticket clerk
   Quest Icon Sprite: pixelmon:textures/gui/research/speech_bubble.png
   Reward: Nothing
-  Unlocks: Timberland Village Lab
+  Turn In NPC: Ticket Clerk
   NPC Model Texture: pixelmon:textures/steve/shoplady2.png
   Description 1: Head underground in the visitor center.
   Description 2: Follow the long hallway until you reach the ticket booth.
@@ -42,13 +39,10 @@ class HandingInThePass["Handing in the pass"] {
 class TimberlandVillageLab["Timberland Village Lab"] {
   NPC: Ticket Clerk
   Area: Visitor Center
-  Starting Location: Visitor Center, ticket gate underground
-  Objective: Reach Location
-  Objective Details: Head to the Timberland Village lab
+  Starting Location: Visitor Center ticket gate underground
+  Objective: Head to the Timberland Village Lab
   Quest Icon Sprite: pixelmon:textures/gui/research/exclamation.png
   Reward: Nothing
-  Unlocks 1: Panic in the Jurassic, A Mystical Research, To Catch a Train
-  Unlocks 2: Into the Twilight, Next Gen Medicine
   NPC Model Texture: pixelmon:textures/steve/shopman.png
   Description 1: The ticket clerk tells you to go to the Timberland Village lab.
   Description 2: This is where you get started in the Safari Zone.
@@ -60,11 +54,11 @@ class TimberlandVillageLab["Timberland Village Lab"] {
 class PanicInTheJurassic["Panic in the Jurassic"] {
   NPC: Dr. Petra Stone
   Area: Ancient Crater
-  Starting Location: Lab, Basement, Building 1
-  Objective: Reach Location
-  Objective Details: Find the Mobile Research Lab in Ancient Crater
+  Starting Location: Timberland Village Lab, Building 1, basement
+  Objective: Find the Mobile Research Lab in the Ancient Crater
   Quest Icon Sprite: pixelmon:textures/gui/research/encounter_grass.png
   Reward: Nothing
+  Turn In NPC: MRU Lead Orin
   NPC Model Texture: pixelmon:textures/steve/scientist_m.png
   Description 1: Ancient Crater scientists lost contact with colleagues in the bottom on-site lab.
   Description 2: A rescue team was dispatched in a high-tech MRU vehicle.
@@ -77,11 +71,11 @@ class PanicInTheJurassic["Panic in the Jurassic"] {
 class AMysticalResearch["A Mystical Research"] {
   NPC: Dr. Lyra Quill
   Area: Mystic Highlands
-  Starting Location: Lab, Second floor, Building 1
-  Objective: Reach Location
-  Objective Details: Find the Mystic Highlands Laboratory
+  Starting Location: Timberland Village Lab, Building 1, second floor
+  Objective: Find the Mystic Highlands Laboratory
   Quest Icon Sprite: pixelmon:textures/gui/research/wisteria.png
   Reward: Nothing
+  Turn In NPC: Researcher Ione
   NPC Model Texture: pixelmon:textures/steve/scientist_f.png
   Description 1: The Highlands team needs help with unique purple crystal research.
   Description 2: Meet their colleagues at the Mystic Highlands Laboratory.
@@ -93,11 +87,11 @@ class AMysticalResearch["A Mystical Research"] {
 class ToCatchATrain["To Catch a Train"] {
   NPC: Rafe Calder
   Area: Scorched Mesa
-  Starting Location: Lab, Third floor, Building 1
-  Objective: Reach Location
-  Objective Details: Head to the train station
+  Starting Location: Timberland Village Lab, Building 1, third floor
+  Objective: Head to the train station
   Quest Icon Sprite: pixelmon:textures/gui/research/question.png
   Reward: Nothing
+  Turn In NPC: Conductor Bram
   NPC Model Texture: pixelmon:textures/steve/engineer.png
   Description 1: The Scorched Mesa scientists need help.
   Description 2: Meet their colleague at the train station to head farther west.
@@ -109,11 +103,11 @@ class ToCatchATrain["To Catch a Train"] {
 class IntoTheTwilight["Into the Twilight"] {
   NPC: Selene Vire
   Area: Twilight Keep
-  Starting Location: Lab, Second floor, Building 2
-  Objective: Reach Location
-  Objective Details: Head to the great manor in Twilight Keep
+  Starting Location: Timberland Village Lab, Building 2, second floor
+  Objective: Head to the great manor in Twilight Keep
   Quest Icon Sprite: pixelmon:textures/gui/research/question.png
   Reward: Nothing
+  Turn In NPC: Steward Vale
   NPC Model Texture: pixelmon:textures/steve/ornithologist.png
   Description 1: Scientists are studying astronomy at the observatory in Twilight Keep.
   Description 2: Before meeting them, visit the lord in the great manor.
@@ -126,11 +120,11 @@ class IntoTheTwilight["Into the Twilight"] {
 class NextGenMedicine["Next Gen Medicine"] {
   NPC: Dr. Keira Holt
   Area: Neon Grove
-  Starting Location: Lab, First floor, Building 1
-  Objective: Deliver Item
-  Objective Details: Deliver parcel to Neon Grove Medical Center
+  Starting Location: Timberland Village Lab, Building 1, first floor
+  Objective: Head to Neon Grove Medical Center
   Quest Icon Sprite: pixelmon:textures/gui/research/money_pouch.png
   Reward: Nothing
+  Turn In NPC: Nurse Ada
   NPC Model Texture: pixelmon:textures/steve/doctor.png
   Description 1: Scientists are using future technologies to advance medicine.
   Description 2: Deliver a parcel containing valuable cures.
@@ -144,15 +138,14 @@ class MySubscription["My subscription!"] {
   NPC: Frog Maniac
   Area: Timberland Village
   Starting Location: Frog Maniac house
-  Objective: Find Item
-  Objective Details: Find Lifetime Subscription to Only Frogs.croak
+  Objective: Find Lifеtimе Subscriрtiоn to Оnly Frоgs.crоаk
   Quest Icon Sprite: minecraft:textures/item/paper.png
   Reward: Nothing
+  Turn In NPC: Frog Maniac
   NPC Model Texture: pixelmon:textures/steve/pokemaniac3.png
   Description 1: Frog Maniac lost his most precious item and asks for help.
   Description 2: He hints it was lost somewhere near his house.
-  Description 3: The item is actually in the forest behind his house.
-  Exact Item Name: Lifеtimе Subscriрtiоn to Оnly Frоgs.crоаk
+  Description 3: The item is in the forest behind his house.
   Talk Early: Please look behind my house first. I think I dropped it near the forest edge.
   Talk Again Active: I still cannot find it. Search behind my house for the paper.
   After Completion: You found it! I owe you one.
