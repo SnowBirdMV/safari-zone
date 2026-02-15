@@ -114,7 +114,7 @@
                 "type": "pixelmon:open_paged_dialogue",
                 "title": "Assistant Maya",
                 "pages": [
-                  "You already have my repeatable example assignment.",
+                  "This is a very long piece of text to check how long the text boxes can handle. im adding a few more words.",
                   "Catch one Pokemon and check your Research tab."
                 ]
               }
