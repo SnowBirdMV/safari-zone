@@ -1,0 +1,21 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:false"
+          },
+          "name": "Find Lifеtimе Subscriрtiоn to Оnly Frоgs.crоаk",
+          "sprite": "minecraft:textures/item/paper.png",
+          "result": []
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "name": "My subscription!"
+}

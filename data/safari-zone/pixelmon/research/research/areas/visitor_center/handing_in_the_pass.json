@@ -1,0 +1,21 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:false"
+          },
+          "name": "Give the Safari Pass to the ticket clerk",
+          "sprite": "pixelmon:textures/gui/research/speech_bubble.png",
+          "result": []
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "name": "Handing in the pass (Timberland Village Map Progression)"
+}

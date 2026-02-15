@@ -1,0 +1,21 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:false"
+          },
+          "name": "Find the Mystic Highlands Laboratory",
+          "sprite": "pixelmon:textures/gui/research/wisteria.png",
+          "result": []
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "name": "A Mystical Research (Mystic Highlands Map Progression)"
+}

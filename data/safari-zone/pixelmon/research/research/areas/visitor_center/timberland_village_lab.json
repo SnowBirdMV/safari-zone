@@ -1,0 +1,21 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:false"
+          },
+          "name": "Head to the Timberland Village Lab",
+          "sprite": "pixelmon:textures/gui/research/exclamation.png",
+          "result": []
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "name": "Timberland Village Lab (Timberland Village Map Progression)"
+}

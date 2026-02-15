@@ -1,0 +1,310 @@
+{
+  "interactions": {
+    "type": "pixelmon:constant",
+    "value": {
+      "interactions": [
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:on_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "cooldown_key": "safari-zone:completed/my_subscription",
+                "cooldown": 365000,
+                "unit": "DAYS"
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Frog Maniac",
+                "pages": [
+                  "You found it! I owe you one."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:has_research",
+                "research": "safari-zone:areas/timberland_village/my_subscription",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:on_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "cooldown_key": "safari-zone:state/my_subscription_ready_to_turn_in",
+                "cooldown": 365000,
+                "unit": "DAYS"
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Frog Maniac",
+                "pages": [
+                  "You found it! I owe you one."
+                ]
+              },
+              {
+                "type": "pixelmon:console_execute_command",
+                "commands": [
+                  "research complete %player_name% safari-zone:areas/timberland_village/my_subscription research"
+                ]
+              },
+              {
+                "type": "pixelmon:set_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "key": "safari-zone:completed/my_subscription"
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:has_research",
+                "research": "safari-zone:areas/timberland_village/my_subscription",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:state/my_subscription_ready_to_turn_in",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Frog Maniac",
+                "pages": [
+                  "I still cannot find it. Search behind my house for the paper."
+                ]
+              },
+              {
+                "type": "pixelmon:set_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "key": "safari-zone:state/my_subscription_ready_to_turn_in"
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:has_research",
+                    "research": "safari-zone:areas/timberland_village/my_subscription",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/my_subscription",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Frog Maniac",
+                "pages": [
+                  "Please look behind my house first. I think I dropped it near the forest edge."
+                ]
+              },
+              {
+                "type": "pixelmon:console_execute_command",
+                "commands": [
+                  "research give %player_name% safari-zone:areas/timberland_village/my_subscription"
+                ]
+              },
+              {
+                "type": "pixelmon:message_player",
+                "messages": [
+                  {
+                    "text": "You received research: My subscription!"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "properties": {
+    "type": "pixelmon:constant",
+    "value": {
+      "health": 20,
+      "eyeHeight": 1,
+      "dimensions": {
+        "width": 1,
+        "height": 2
+      },
+      "pushable": false,
+      "child": false,
+      "invulnerable": true,
+      "immovable": true,
+      "nameplate": true
+    }
+  },
+  "party": {
+    "type": "pixelmon:constant",
+    "value": {
+      "type": "pixelmon:empty"
+    }
+  },
+  "names": {
+    "type": "pixelmon:constant",
+    "value": "Frog Maniac"
+  },
+  "models": {
+    "type": "pixelmon:constant",
+    "value": {
+      "type": "pixelmon:player",
+      "slim": false,
+      "texture": "pixelmon:textures/steve/pokemaniac3.png"
+    }
+  },
+  "ai_provider": {
+    "type": "pixelmon:constant",
+    "value": {
+      "type": "pixelmon:stand_and_look",
+      "look_distance": 10,
+      "swim": false
+    }
+  }
+}

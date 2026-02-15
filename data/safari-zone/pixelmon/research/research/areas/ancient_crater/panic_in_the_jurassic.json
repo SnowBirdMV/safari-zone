@@ -1,0 +1,21 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:false"
+          },
+          "name": "Find the Mobile Research Lab in the Ancient Crater",
+          "sprite": "pixelmon:textures/gui/research/encounter_grass.png",
+          "result": []
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "name": "Panic in the Jurassic (Ancient Crater Map Progression)"
+}

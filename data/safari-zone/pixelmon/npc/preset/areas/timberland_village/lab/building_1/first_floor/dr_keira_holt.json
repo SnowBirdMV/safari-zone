@@ -1,0 +1,318 @@
+{
+  "interactions": {
+    "type": "pixelmon:constant",
+    "value": {
+      "interactions": [
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:on_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "cooldown_key": "safari-zone:completed/next_gen_medicine",
+                "cooldown": 365000,
+                "unit": "DAYS"
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Dr. Keira Holt",
+                "pages": [
+                  "Delivery confirmed. The medical team has what they need."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:has_research",
+                "research": "safari-zone:areas/neon_grove/next_gen_medicine",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                }
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Dr. Keira Holt",
+                "pages": [
+                  "Deliver this medical parcel to Neon Grove Medical Center right away."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:has_research",
+                "research": "safari-zone:areas/visitor_center/timberland_village_lab",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                }
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Dr. Keira Holt",
+                "pages": [
+                  "Scientists are using future technologies to advance medicine.",
+                  "Deliver a parcel containing valuable cures.",
+                  "Take it to the Neon Grove Medical Center."
+                ]
+              },
+              {
+                "type": "pixelmon:console_execute_command",
+                "commands": [
+                  "research complete %player_name% safari-zone:areas/visitor_center/timberland_village_lab research",
+                  "research give %player_name% safari-zone:areas/neon_grove/next_gen_medicine"
+                ]
+              },
+              {
+                "type": "pixelmon:set_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "key": "safari-zone:completed/timberland_village_lab"
+              },
+              {
+                "type": "pixelmon:message_player",
+                "messages": [
+                  {
+                    "text": "You received research: Next Gen Medicine"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:on_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "cooldown_key": "safari-zone:completed/timberland_village_lab",
+                "cooldown": 365000,
+                "unit": "DAYS"
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:has_research",
+                    "research": "safari-zone:areas/neon_grove/next_gen_medicine",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/next_gen_medicine",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Dr. Keira Holt",
+                "pages": [
+                  "Scientists are using future technologies to advance medicine.",
+                  "Deliver a parcel containing valuable cures.",
+                  "Take it to the Neon Grove Medical Center."
+                ]
+              },
+              {
+                "type": "pixelmon:console_execute_command",
+                "commands": [
+                  "research give %player_name% safari-zone:areas/neon_grove/next_gen_medicine"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Dr. Keira Holt",
+                "pages": [
+                  "Check in at Timberland Village Lab first; they route Neon Grove deliveries."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "properties": {
+    "type": "pixelmon:constant",
+    "value": {
+      "health": 20,
+      "eyeHeight": 1,
+      "dimensions": {
+        "width": 1,
+        "height": 2
+      },
+      "pushable": false,
+      "child": false,
+      "invulnerable": true,
+      "immovable": true,
+      "nameplate": true
+    }
+  },
+  "party": {
+    "type": "pixelmon:constant",
+    "value": {
+      "type": "pixelmon:empty"
+    }
+  },
+  "names": {
+    "type": "pixelmon:constant",
+    "value": "Dr. Keira Holt"
+  },
+  "models": {
+    "type": "pixelmon:constant",
+    "value": {
+      "type": "pixelmon:player",
+      "slim": false,
+      "texture": "pixelmon:textures/steve/doctor.png"
+    }
+  },
+  "ai_provider": {
+    "type": "pixelmon:constant",
+    "value": {
+      "type": "pixelmon:stand_and_look",
+      "look_distance": 10,
+      "swim": false
+    }
+  }
+}

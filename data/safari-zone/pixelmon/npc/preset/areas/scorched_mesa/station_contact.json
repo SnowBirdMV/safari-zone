@@ -1,0 +1,182 @@
+{
+  "interactions": {
+    "type": "pixelmon:constant",
+    "value": {
+      "interactions": [
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:on_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "cooldown_key": "safari-zone:completed/to_catch_a_train",
+                "cooldown": 365000,
+                "unit": "DAYS"
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Conductor Bram",
+                "pages": [
+                  "Transfer confirmed.",
+                  "You are fully cleared on the Scorched Mesa route."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:has_research",
+                "research": "safari-zone:areas/scorched_mesa/to_catch_a_train",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                }
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Conductor Bram",
+                "pages": [
+                  "You made it to the station.",
+                  "I am marking your transfer complete."
+                ]
+              },
+              {
+                "type": "pixelmon:console_execute_command",
+                "commands": [
+                  "research complete %player_name% safari-zone:areas/scorched_mesa/to_catch_a_train research"
+                ]
+              },
+              {
+                "type": "pixelmon:set_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "key": "safari-zone:completed/to_catch_a_train"
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Conductor Bram",
+                "pages": [
+                  "Rafe Calder assigns this route.",
+                  "Please speak with him at Timberland Village Lab first."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "properties": {
+    "type": "pixelmon:constant",
+    "value": {
+      "health": 20,
+      "eyeHeight": 1,
+      "dimensions": {
+        "width": 1,
+        "height": 2
+      },
+      "pushable": false,
+      "child": false,
+      "invulnerable": true,
+      "immovable": true,
+      "nameplate": true
+    }
+  },
+  "party": {
+    "type": "pixelmon:constant",
+    "value": {
+      "type": "pixelmon:empty"
+    }
+  },
+  "names": {
+    "type": "pixelmon:constant",
+    "value": "Conductor Bram"
+  },
+  "models": {
+    "type": "pixelmon:constant",
+    "value": {
+      "type": "pixelmon:player",
+      "slim": false,
+      "texture": "pixelmon:textures/steve/engineer.png"
+    }
+  },
+  "ai_provider": {
+    "type": "pixelmon:constant",
+    "value": {
+      "type": "pixelmon:stand_and_look",
+      "look_distance": 10,
+      "swim": false
+    }
+  }
+}

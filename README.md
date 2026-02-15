@@ -6,6 +6,7 @@ class MapProgressionStart["Map Progression Start"]
 
 class WelcomeToTheSafari["Welcome to the Safari!"] {
   NPC: Visitor Center Receptionist
+  Area: Visitor Center
   Starting Location: Visitor Center
   Objective: Acquire Item
   Objective Details: Purchase Safari Pass
@@ -23,6 +24,7 @@ class WelcomeToTheSafari["Welcome to the Safari!"] {
 
 class HandingInThePass["Handing in the pass"] {
   NPC: Visitor Center Receptionist
+  Area: Visitor Center
   Starting Location: Visitor Center, ticket gate underground
   Objective: Turn In Item
   Objective Details: Give Safari Pass to ticket clerk
@@ -39,6 +41,7 @@ class HandingInThePass["Handing in the pass"] {
 
 class TimberlandVillageLab["Timberland Village Lab"] {
   NPC: Ticket Clerk
+  Area: Visitor Center
   Starting Location: Visitor Center, ticket gate underground
   Objective: Reach Location
   Objective Details: Head to the Timberland Village lab
@@ -55,7 +58,8 @@ class TimberlandVillageLab["Timberland Village Lab"] {
 }
 
 class PanicInTheJurassic["Panic in the Jurassic"] {
-  NPC: Ancient Crater Scientist [Name TBD]
+  NPC: Dr. Petra Stone
+  Area: Ancient Crater
   Starting Location: Lab, Basement, Building 1
   Objective: Reach Location
   Objective Details: Find the Mobile Research Lab in Ancient Crater
@@ -71,7 +75,8 @@ class PanicInTheJurassic["Panic in the Jurassic"] {
 }
 
 class AMysticalResearch["A Mystical Research"] {
-  NPC: Mystic Highlands Scientist [Name TBD]
+  NPC: Dr. Lyra Quill
+  Area: Mystic Highlands
   Starting Location: Lab, Second floor, Building 1
   Objective: Reach Location
   Objective Details: Find the Mystic Highlands Laboratory
@@ -86,7 +91,8 @@ class AMysticalResearch["A Mystical Research"] {
 }
 
 class ToCatchATrain["To Catch a Train"] {
-  NPC: Scorched Mesa Scientist [Name TBD]
+  NPC: Rafe Calder
+  Area: Scorched Mesa
   Starting Location: Lab, Third floor, Building 1
   Objective: Reach Location
   Objective Details: Head to the train station
@@ -101,7 +107,8 @@ class ToCatchATrain["To Catch a Train"] {
 }
 
 class IntoTheTwilight["Into the Twilight"] {
-  NPC: Twilight Keep Scientist [Name TBD]
+  NPC: Selene Vire
+  Area: Twilight Keep
   Starting Location: Lab, Second floor, Building 2
   Objective: Reach Location
   Objective Details: Head to the great manor in Twilight Keep
@@ -117,7 +124,8 @@ class IntoTheTwilight["Into the Twilight"] {
 }
 
 class NextGenMedicine["Next Gen Medicine"] {
-  NPC: Scorched Mesa Scientist [Name TBD]
+  NPC: Dr. Keira Holt
+  Area: Neon Grove
   Starting Location: Lab, First floor, Building 1
   Objective: Deliver Item
   Objective Details: Deliver parcel to Neon Grove Medical Center
@@ -134,6 +142,7 @@ class NextGenMedicine["Next Gen Medicine"] {
 
 class MySubscription["My subscription!"] {
   NPC: Frog Maniac
+  Area: Timberland Village
   Starting Location: Frog Maniac house
   Objective: Find Item
   Objective Details: Find Lifetime Subscription to Only Frogs.croak
