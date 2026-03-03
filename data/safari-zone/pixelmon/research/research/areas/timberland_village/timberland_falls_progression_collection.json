@@ -1,0 +1,200 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/welcome_to_the_safari",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "Welcome to the Safari!",
+          "sprite": "pixelmon:textures/gui/research/exclamation.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/handing_in_the_pass",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "Handing in the pass",
+          "sprite": "pixelmon:textures/gui/research/exclamation.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/timberland_village_lab",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "Timberland Village Lab",
+          "sprite": "pixelmon:textures/gui/research/exclamation.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/panic_in_the_jurassic",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "Panic in the Jurassic",
+          "sprite": "pixelmon:textures/gui/research/encounter_grass.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/a_mystical_research",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "A Mystical Research",
+          "sprite": "pixelmon:textures/gui/research/wisteria.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/to_catch_a_train",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "To Catch a Train",
+          "sprite": "pixelmon:textures/gui/research/question.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/into_the_twilight",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "Into the Twilight",
+          "sprite": "pixelmon:textures/gui/research/question.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/next_gen_medicine",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "Next Gen Medicine",
+          "sprite": "pixelmon:textures/gui/research/money_pouch.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/my_subscription",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "My subscription!",
+          "sprite": "minecraft:textures/item/paper.png",
+          "result": [],
+          "required_amount": 1
+        }
+      ],
+      "result": [
+        {
+          "type": "pixelmon:give_money",
+          "money": 5000.0
+        },
+        {
+          "type": "pixelmon:set_cooldown",
+          "player": {
+            "type": "pixelmon:context_player",
+            "key": "pixelmon:player"
+          },
+          "key": "safari-zone:completed/timberland_falls_progression_collection"
+        }
+      ],
+      "result_sprites": [
+        {
+          "resource": "pixelmon:textures/gui/research/money_pouch.png",
+          "description": "₽5000"
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "tier": {
+    "name": "Timberland falls",
+    "main_color": {
+      "red": 95,
+      "green": 165,
+      "blue": 96,
+      "alpha": 255
+    },
+    "accent_color": {
+      "red": 225,
+      "green": 196,
+      "blue": 124,
+      "alpha": 255
+    }
+  },
+  "name": "Timberland falls area collection"
+}

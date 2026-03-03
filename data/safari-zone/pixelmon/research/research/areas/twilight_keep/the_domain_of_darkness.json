@@ -1,0 +1,608 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:capture_pokemon",
+          "required_amount": 5,
+          "condition": {
+            "type": "pixelmon:logical_or",
+            "conditions": [
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "scraggy"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "scrafty"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "karrablast"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "escavalier"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "litwick"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "lampent"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "chandelure"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "golett"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "golurk"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "honedge"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "doublade"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "aegislash"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "sinistea"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "polteageist"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "sirfetchd"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "falinks"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "gastly"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "haunter"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "gengar"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "sableye"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "shuppet"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "banette"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "duskull"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "dusclops"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "dusknoir"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "murkrow"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "honchkrow"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "qwilfish hisuian"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "overqwil"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "houndour"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "houndoom"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "inkay"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "malamar"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "skrelp"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "dragalge"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "nickit"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "thievul"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "impidimp"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "morgrem"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "grimmsnarl"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              }
+            ]
+          },
+          "name": "Catch various pokemon in the Twilight Keep",
+          "sprite": "pixelmon:textures/gui/research/speech_bubble.png",
+          "result": [
+            {
+              "type": "pixelmon:set_cooldown",
+              "player": {
+                "type": "pixelmon:context_player",
+                "key": "pixelmon:player"
+              },
+              "key": "safari-zone:completed/the_domain_of_darkness"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "name": "The Domain of Darkness",
+  "tier": {
+    "name": "Twilight Keep",
+    "main_color": {
+      "red": 74,
+      "green": 67,
+      "blue": 95,
+      "alpha": 255
+    },
+    "accent_color": {
+      "red": 186,
+      "green": 162,
+      "blue": 216,
+      "alpha": 255
+    }
+  }
+}

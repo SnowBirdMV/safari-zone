@@ -1,0 +1,51 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:capture_pokemon",
+          "condition": {
+            "type": "pixelmon:spec_matches",
+            "pokemon": {
+              "type": "pixelmon:context_pokemon",
+              "key": "pixelmon:pokemon"
+            },
+            "spec": "tyrantrum"
+          },
+          "name": "Catch a Tyrantrum",
+          "sprite": "pixelmon:textures/gui/research/pokeball.png",
+          "result": [
+            {
+              "type": "pixelmon:set_cooldown",
+              "player": {
+                "type": "pixelmon:context_player",
+                "key": "pixelmon:player"
+              },
+              "key": "safari-zone:completed/big_boned"
+            }
+          ],
+          "required_amount": 1
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "name": "Big Boned",
+  "tier": {
+    "name": "Ancient Crater",
+    "main_color": {
+      "red": 86,
+      "green": 132,
+      "blue": 84,
+      "alpha": 255
+    },
+    "accent_color": {
+      "red": 191,
+      "green": 218,
+      "blue": 157,
+      "alpha": 255
+    }
+  }
+}

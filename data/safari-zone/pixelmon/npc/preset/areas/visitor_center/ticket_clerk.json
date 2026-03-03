@@ -9,6 +9,36 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
+                "type": "pixelmon:has_research",
+                "research": "safari-zone:areas/visitor_center/timberland_village_lab",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/timberland_village_lab",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
                 "type": "pixelmon:string_compare",
                 "first": {
                   "type": "pixelmon:constant_string",
@@ -18,7 +48,24 @@
                   "type": "pixelmon:hand_used"
                 }
               }
-            },
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Ticket Clerk",
+                "pages": [
+                  "Your next stop is the main lab in Timberland Village. Head there and check in."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
@@ -30,6 +77,19 @@
                 "cooldown_key": "safari-zone:completed/timberland_village_lab",
                 "cooldown": 365000,
                 "unit": "DAYS"
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
               }
             }
           ],
@@ -52,54 +112,55 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/timberland_village_lab",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
                 }
               }
             },
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:has_research",
-                "research": "safari-zone:areas/visitor_center/timberland_village_lab",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:has_research",
+                    "research": "safari-zone:areas/visitor_center/timberland_village_lab",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    }
+                  }
                 }
               }
-            }
-          ],
-          "results": {
-            "type": "pixelmon:constant",
-            "value": [
-              {
-                "type": "pixelmon:open_paged_dialogue",
-                "title": "Ticket Clerk",
-                "pages": [
-                  "Your next stop is Timberland Village Lab. Head there and check in."
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "event": "pixelmon:right_click",
-          "conditions": [
+            },
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/handing_in_the_pass",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
                 }
               }
             },
@@ -113,6 +174,19 @@
                   "key": "pixelmon:player"
                 }
               }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
             }
           ],
           "results": {
@@ -122,8 +196,7 @@
                 "type": "pixelmon:open_paged_dialogue",
                 "title": "Ticket Clerk",
                 "pages": [
-                  "The ticket clerk tells you to go to the Timberland Village lab.",
-                  "This is where you get started in the Safari Zone."
+                  "Thank you! With this, you’re all set to enter Timberland Village. Be sure to drop by the lab, they need a lot of capable trainers like you to advance their research.  Enjoy your safari!"
                 ]
               },
               {
@@ -158,27 +231,20 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/timberland_village_lab",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
                 }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:on_cooldown",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
-                },
-                "cooldown_key": "safari-zone:completed/handing_in_the_pass",
-                "cooldown": 365000,
-                "unit": "DAYS"
               }
             },
             {
@@ -198,48 +264,6 @@
                 }
               }
             },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:logical_not",
-                "condition": {
-                  "type": "pixelmon:interaction_condition",
-                  "condition": {
-                    "type": "pixelmon:on_cooldown",
-                    "player": {
-                      "type": "pixelmon:context_player",
-                      "key": "pixelmon:player"
-                    },
-                    "cooldown_key": "safari-zone:completed/timberland_village_lab",
-                    "cooldown": 365000,
-                    "unit": "DAYS"
-                  }
-                }
-              }
-            }
-          ],
-          "results": {
-            "type": "pixelmon:constant",
-            "value": [
-              {
-                "type": "pixelmon:open_paged_dialogue",
-                "title": "Ticket Clerk",
-                "pages": [
-                  "Your next stop is Timberland Village Lab. Head there and check in."
-                ]
-              },
-              {
-                "type": "pixelmon:console_execute_command",
-                "commands": [
-                  "research give %player_name% safari-zone:areas/visitor_center/timberland_village_lab"
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "event": "pixelmon:right_click",
-          "conditions": [
             {
               "type": "pixelmon:interaction_condition",
               "condition": {

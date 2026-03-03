@@ -1,0 +1,56 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:pokemon_drop_item",
+          "required_amount": 1,
+          "condition": {
+            "type": "pixelmon:items_equal",
+            "first": {
+              "type": "pixelmon:context_item"
+            },
+            "second": {
+              "type": "pixelmon:constant_itemstack",
+              "value": {
+                "id": "pixelmon:raw_tumblestone",
+                "count": 1
+              }
+            }
+          },
+          "name": "Have Pokemon drop raw tumblestone 1 time in the mines",
+          "sprite": "pixelmon:textures/gui/research/question.png",
+          "result": [
+            {
+              "type": "pixelmon:set_cooldown",
+              "player": {
+                "type": "pixelmon:context_player",
+                "key": "pixelmon:player"
+              },
+              "key": "safari-zone:completed/mining_our_own_business"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "name": "Mining our own business",
+  "tier": {
+    "name": "Scorched Mesa",
+    "main_color": {
+      "red": 194,
+      "green": 104,
+      "blue": 56,
+      "alpha": 255
+    },
+    "accent_color": {
+      "red": 231,
+      "green": 193,
+      "blue": 129,
+      "alpha": 255
+    }
+  }
+}

@@ -9,67 +9,43 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:on_cooldown",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
-                },
-                "cooldown_key": "safari-zone:completed/panic_in_the_jurassic",
-                "cooldown": 365000,
-                "unit": "DAYS"
-              }
-            }
-          ],
-          "results": {
-            "type": "pixelmon:constant",
-            "value": [
-              {
-                "type": "pixelmon:open_paged_dialogue",
-                "title": "Dr. Petra Stone",
-                "pages": [
-                  "Thank you. The crater team has the help they needed."
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "event": "pixelmon:right_click",
-          "conditions": [
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
                 "type": "pixelmon:has_research",
                 "research": "safari-zone:areas/ancient_crater/panic_in_the_jurassic",
                 "player": {
                   "type": "pixelmon:context_player",
                   "key": "pixelmon:player"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/panic_in_the_jurassic",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
                 }
               }
             }
@@ -93,6 +69,19 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
+                "type": "pixelmon:on_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "cooldown_key": "safari-zone:completed/panic_in_the_jurassic",
+                "cooldown": 365000,
+                "unit": "DAYS"
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
                 "type": "pixelmon:string_compare",
                 "first": {
                   "type": "pixelmon:constant_string",
@@ -100,17 +89,6 @@
                 },
                 "second": {
                   "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:has_research",
-                "research": "safari-zone:areas/visitor_center/timberland_village_lab",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
                 }
               }
             }
@@ -122,15 +100,113 @@
                 "type": "pixelmon:open_paged_dialogue",
                 "title": "Dr. Petra Stone",
                 "pages": [
-                  "Ancient Crater scientists lost contact with colleagues in the bottom on-site lab.",
-                  "A rescue team was dispatched in a high-tech MRU vehicle.",
-                  "Go into the crater, meet the MRU, and provide assistance."
+                  "Thank you. The crater team has the help they needed."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/panic_in_the_jurassic",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:has_research",
+                    "research": "safari-zone:areas/ancient_crater/panic_in_the_jurassic",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_or",
+                "conditions": [
+                  {
+                    "type": "pixelmon:interaction_condition",
+                    "condition": {
+                      "type": "pixelmon:has_research",
+                      "research": "safari-zone:areas/visitor_center/timberland_village_lab",
+                      "player": {
+                        "type": "pixelmon:context_player",
+                        "key": "pixelmon:player"
+                      }
+                    }
+                  },
+                  {
+                    "type": "pixelmon:interaction_condition",
+                    "condition": {
+                      "type": "pixelmon:on_cooldown",
+                      "player": {
+                        "type": "pixelmon:context_player",
+                        "key": "pixelmon:player"
+                      },
+                      "cooldown_key": "safari-zone:completed/timberland_village_lab",
+                      "cooldown": 365000,
+                      "unit": "DAYS"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Dr. Petra Stone",
+                "pages": [
+                  "Trainer, we haven’t heard from our colleagues in the on-site lab at the very bottom of the Ancient Crater for quite some time. A rescue team has already been sent in their MRU vehicle, but they’ll need help.",
+                  "I need you to head down into the crater, meet up with the MRU team, and assist them however you can. Be careful—it’s not an easy journey."
                 ]
               },
               {
                 "type": "pixelmon:console_execute_command",
                 "commands": [
                   "research complete %player_name% safari-zone:areas/visitor_center/timberland_village_lab research",
+                  "research give %player_name% safari-zone:areas/ancient_crater/ancient_crater_area_collection",
                   "research give %player_name% safari-zone:areas/ancient_crater/panic_in_the_jurassic"
                 ]
               },
@@ -159,27 +235,20 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/panic_in_the_jurassic",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
                 }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:on_cooldown",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
-                },
-                "cooldown_key": "safari-zone:completed/timberland_village_lab",
-                "cooldown": 365000,
-                "unit": "DAYS"
               }
             },
             {
@@ -202,50 +271,6 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:logical_not",
-                "condition": {
-                  "type": "pixelmon:interaction_condition",
-                  "condition": {
-                    "type": "pixelmon:on_cooldown",
-                    "player": {
-                      "type": "pixelmon:context_player",
-                      "key": "pixelmon:player"
-                    },
-                    "cooldown_key": "safari-zone:completed/panic_in_the_jurassic",
-                    "cooldown": 365000,
-                    "unit": "DAYS"
-                  }
-                }
-              }
-            }
-          ],
-          "results": {
-            "type": "pixelmon:constant",
-            "value": [
-              {
-                "type": "pixelmon:open_paged_dialogue",
-                "title": "Dr. Petra Stone",
-                "pages": [
-                  "Ancient Crater scientists lost contact with colleagues in the bottom on-site lab.",
-                  "A rescue team was dispatched in a high-tech MRU vehicle.",
-                  "Go into the crater, meet the MRU, and provide assistance."
-                ]
-              },
-              {
-                "type": "pixelmon:console_execute_command",
-                "commands": [
-                  "research give %player_name% safari-zone:areas/ancient_crater/panic_in_the_jurassic"
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "event": "pixelmon:right_click",
-          "conditions": [
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
                 "type": "pixelmon:string_compare",
                 "first": {
                   "type": "pixelmon:constant_string",
@@ -264,7 +289,7 @@
                 "type": "pixelmon:open_paged_dialogue",
                 "title": "Dr. Petra Stone",
                 "pages": [
-                  "Check in at Timberland Village Lab first. They assign Ancient Crater support."
+                  "Check in at the main lab in Timberland Village first. They assign Ancient Crater support."
                 ]
               }
             ]

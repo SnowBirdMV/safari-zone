@@ -9,67 +9,43 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:on_cooldown",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
-                },
-                "cooldown_key": "safari-zone:completed/a_mystical_research",
-                "cooldown": 365000,
-                "unit": "DAYS"
-              }
-            }
-          ],
-          "results": {
-            "type": "pixelmon:constant",
-            "value": [
-              {
-                "type": "pixelmon:open_paged_dialogue",
-                "title": "Dr. Lyra Quill",
-                "pages": [
-                  "Excellent. Your help keeps the Highlands crystal study moving."
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "event": "pixelmon:right_click",
-          "conditions": [
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
                 "type": "pixelmon:has_research",
                 "research": "safari-zone:areas/mystic_highlands/a_mystical_research",
                 "player": {
                   "type": "pixelmon:context_player",
                   "key": "pixelmon:player"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/a_mystical_research",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
                 }
               }
             }
@@ -93,6 +69,19 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
+                "type": "pixelmon:on_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "cooldown_key": "safari-zone:completed/a_mystical_research",
+                "cooldown": 365000,
+                "unit": "DAYS"
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
                 "type": "pixelmon:string_compare",
                 "first": {
                   "type": "pixelmon:constant_string",
@@ -100,17 +89,6 @@
                 },
                 "second": {
                   "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:has_research",
-                "research": "safari-zone:areas/visitor_center/timberland_village_lab",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
                 }
               }
             }
@@ -122,8 +100,106 @@
                 "type": "pixelmon:open_paged_dialogue",
                 "title": "Dr. Lyra Quill",
                 "pages": [
-                  "The Highlands team needs help with unique purple crystal research.",
-                  "Meet their colleagues at the Mystic Highlands Laboratory."
+                  "Excellent. Your help keeps the Highlands crystal study moving."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/a_mystical_research",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:has_research",
+                    "research": "safari-zone:areas/mystic_highlands/a_mystical_research",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_or",
+                "conditions": [
+                  {
+                    "type": "pixelmon:interaction_condition",
+                    "condition": {
+                      "type": "pixelmon:has_research",
+                      "research": "safari-zone:areas/visitor_center/timberland_village_lab",
+                      "player": {
+                        "type": "pixelmon:context_player",
+                        "key": "pixelmon:player"
+                      }
+                    }
+                  },
+                  {
+                    "type": "pixelmon:interaction_condition",
+                    "condition": {
+                      "type": "pixelmon:on_cooldown",
+                      "player": {
+                        "type": "pixelmon:context_player",
+                        "key": "pixelmon:player"
+                      },
+                      "cooldown_key": "safari-zone:completed/timberland_village_lab",
+                      "cooldown": 365000,
+                      "unit": "DAYS"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Dr. Lyra Quill",
+                "pages": [
+                  "Trainer, our team here in the Mystic Highlands could really use some help with a unique research project involving these purple crystals.",
+                  "We need you to head over and meet our colleagues at the Mystic Highlands Laboratory. They’ll explain what needs to be done and could use your assistance."
                 ]
               },
               {
@@ -158,27 +234,20 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/a_mystical_research",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
                 }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:on_cooldown",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
-                },
-                "cooldown_key": "safari-zone:completed/timberland_village_lab",
-                "cooldown": 365000,
-                "unit": "DAYS"
               }
             },
             {
@@ -201,49 +270,6 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:logical_not",
-                "condition": {
-                  "type": "pixelmon:interaction_condition",
-                  "condition": {
-                    "type": "pixelmon:on_cooldown",
-                    "player": {
-                      "type": "pixelmon:context_player",
-                      "key": "pixelmon:player"
-                    },
-                    "cooldown_key": "safari-zone:completed/a_mystical_research",
-                    "cooldown": 365000,
-                    "unit": "DAYS"
-                  }
-                }
-              }
-            }
-          ],
-          "results": {
-            "type": "pixelmon:constant",
-            "value": [
-              {
-                "type": "pixelmon:open_paged_dialogue",
-                "title": "Dr. Lyra Quill",
-                "pages": [
-                  "The Highlands team needs help with unique purple crystal research.",
-                  "Meet their colleagues at the Mystic Highlands Laboratory."
-                ]
-              },
-              {
-                "type": "pixelmon:console_execute_command",
-                "commands": [
-                  "research give %player_name% safari-zone:areas/mystic_highlands/a_mystical_research"
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "event": "pixelmon:right_click",
-          "conditions": [
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
                 "type": "pixelmon:string_compare",
                 "first": {
                   "type": "pixelmon:constant_string",
@@ -262,7 +288,7 @@
                 "type": "pixelmon:open_paged_dialogue",
                 "title": "Dr. Lyra Quill",
                 "pages": [
-                  "Visit Timberland Village Lab first. They handle all Highlands assignments."
+                  "Visit the main lab in Timberland Village first. They handle all Highlands assignments."
                 ]
               }
             ]

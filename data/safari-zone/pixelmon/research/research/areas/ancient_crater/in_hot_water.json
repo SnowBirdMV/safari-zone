@@ -1,0 +1,244 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:capture_pokemon",
+          "condition": {
+            "type": "pixelmon:logical_or",
+            "conditions": [
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "exeggutor alolan"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "lapras"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "omanyte"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "omastar"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "kabuto"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "kabutops"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "aerodactyl"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "carvanha"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "anorith"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "armaldo"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "relicanth"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "tirtouga"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "carracosta"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "wimpod"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              }
+            ]
+          },
+          "name": "Catch Pokemon from the lower-Ancient Crater area",
+          "sprite": "pixelmon:textures/gui/research/pokeball.png",
+          "result": [
+            {
+              "type": "pixelmon:set_cooldown",
+              "player": {
+                "type": "pixelmon:context_player",
+                "key": "pixelmon:player"
+              },
+              "key": "safari-zone:completed/in_hot_water"
+            }
+          ],
+          "required_amount": 1
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "name": "In hot water",
+  "tier": {
+    "name": "Ancient Crater",
+    "main_color": {
+      "red": 86,
+      "green": 132,
+      "blue": 84,
+      "alpha": 255
+    },
+    "accent_color": {
+      "red": 191,
+      "green": 218,
+      "blue": 157,
+      "alpha": 255
+    }
+  }
+}

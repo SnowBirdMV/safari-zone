@@ -9,67 +9,43 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:on_cooldown",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
-                },
-                "cooldown_key": "safari-zone:completed/handing_in_the_pass",
-                "cooldown": 365000,
-                "unit": "DAYS"
-              }
-            }
-          ],
-          "results": {
-            "type": "pixelmon:constant",
-            "value": [
-              {
-                "type": "pixelmon:open_paged_dialogue",
-                "title": "Gate Receptionist",
-                "pages": [
-                  "Pass received. You can continue on to Timberland Village Lab."
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "event": "pixelmon:right_click",
-          "conditions": [
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
                 "type": "pixelmon:has_research",
                 "research": "safari-zone:areas/visitor_center/handing_in_the_pass",
                 "player": {
                   "type": "pixelmon:context_player",
                   "key": "pixelmon:player"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/handing_in_the_pass",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
                 }
               }
             }
@@ -93,6 +69,19 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
+                "type": "pixelmon:on_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "cooldown_key": "safari-zone:completed/handing_in_the_pass",
+                "cooldown": 365000,
+                "unit": "DAYS"
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
                 "type": "pixelmon:string_compare",
                 "first": {
                   "type": "pixelmon:constant_string",
@@ -100,6 +89,78 @@
                 },
                 "second": {
                   "type": "pixelmon:hand_used"
+                }
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Gate Receptionist",
+                "pages": [
+                  "Pass received. You can continue on to the main lab in Timberland Village."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/handing_in_the_pass",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:has_research",
+                    "research": "safari-zone:areas/visitor_center/handing_in_the_pass",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/welcome_to_the_safari",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
                 }
               }
             },
@@ -113,6 +174,19 @@
                   "key": "pixelmon:player"
                 }
               }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
             }
           ],
           "results": {
@@ -122,8 +196,7 @@
                 "type": "pixelmon:open_paged_dialogue",
                 "title": "Gate Receptionist",
                 "pages": [
-                  "Head underground in the visitor center.",
-                  "Follow the long hallway until you reach the ticket booth."
+                  "The player heads underground in the visitor center and goes down a long hallways to reach the ticket booth."
                 ]
               },
               {
@@ -158,27 +231,20 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/handing_in_the_pass",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
                 }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:on_cooldown",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
-                },
-                "cooldown_key": "safari-zone:completed/welcome_to_the_safari",
-                "cooldown": 365000,
-                "unit": "DAYS"
               }
             },
             {
@@ -198,48 +264,6 @@
                 }
               }
             },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:logical_not",
-                "condition": {
-                  "type": "pixelmon:interaction_condition",
-                  "condition": {
-                    "type": "pixelmon:on_cooldown",
-                    "player": {
-                      "type": "pixelmon:context_player",
-                      "key": "pixelmon:player"
-                    },
-                    "cooldown_key": "safari-zone:completed/handing_in_the_pass",
-                    "cooldown": 365000,
-                    "unit": "DAYS"
-                  }
-                }
-              }
-            }
-          ],
-          "results": {
-            "type": "pixelmon:constant",
-            "value": [
-              {
-                "type": "pixelmon:open_paged_dialogue",
-                "title": "Gate Receptionist",
-                "pages": [
-                  "Go down this hallway and give your pass to the ticket clerk."
-                ]
-              },
-              {
-                "type": "pixelmon:console_execute_command",
-                "commands": [
-                  "research give %player_name% safari-zone:areas/visitor_center/handing_in_the_pass"
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "event": "pixelmon:right_click",
-          "conditions": [
             {
               "type": "pixelmon:interaction_condition",
               "condition": {

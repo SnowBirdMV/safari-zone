@@ -9,63 +9,6 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:on_cooldown",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
-                },
-                "cooldown_key": "safari-zone:completed/next_gen_medicine",
-                "cooldown": 365000,
-                "unit": "DAYS"
-              }
-            }
-          ],
-          "results": {
-            "type": "pixelmon:constant",
-            "value": [
-              {
-                "type": "pixelmon:open_paged_dialogue",
-                "title": "Nurse Ada",
-                "pages": [
-                  "Parcel delivery already confirmed.",
-                  "Thank you for supporting Neon Grove Medical Center."
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "event": "pixelmon:right_click",
-          "conditions": [
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
                 "type": "pixelmon:has_research",
                 "research": "safari-zone:areas/neon_grove/next_gen_medicine",
                 "player": {
@@ -73,6 +16,38 @@
                   "key": "pixelmon:player"
                 }
               }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/next_gen_medicine",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
             }
           ],
           "results": {
@@ -82,8 +57,8 @@
                 "type": "pixelmon:open_paged_dialogue",
                 "title": "Nurse Ada",
                 "pages": [
-                  "Delivery received.",
-                  "I will log this parcel handoff for the lab team."
+                  "Perfect timing. The parcel is here and our treatment wing can continue.",
+                  "Thank you for bringing it in quickly."
                 ]
               },
               {
@@ -99,6 +74,14 @@
                   "key": "pixelmon:player"
                 },
                 "key": "safari-zone:completed/next_gen_medicine"
+              },
+              {
+                "type": "pixelmon:message_player",
+                "messages": [
+                  {
+                    "text": "You completed research: Next Gen Medicine"
+                  }
+                ]
               }
             ]
           }
@@ -106,6 +89,19 @@
         {
           "event": "pixelmon:right_click",
           "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:on_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "cooldown_key": "safari-zone:completed/next_gen_medicine",
+                "cooldown": 365000,
+                "unit": "DAYS"
+              }
+            },
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
@@ -127,8 +123,73 @@
                 "type": "pixelmon:open_paged_dialogue",
                 "title": "Nurse Ada",
                 "pages": [
-                  "For official deliveries, speak with Dr. Keira Holt first.",
-                  "She dispatches parcels from Timberland Village Lab."
+                  "Supplies are stable now. If you need more work, report back to the Timberland lab."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:has_research",
+                    "research": "safari-zone:areas/neon_grove/next_gen_medicine",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/next_gen_medicine",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Nurse Ada",
+                "pages": [
+                  "We have not logged a delivery assignment for you. Check with Dr. Keira Holt in Timberland Village first."
                 ]
               }
             ]

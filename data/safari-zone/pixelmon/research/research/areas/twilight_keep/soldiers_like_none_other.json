@@ -1,0 +1,51 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:capture_pokemon",
+          "required_amount": 3,
+          "condition": {
+            "type": "pixelmon:spec_matches",
+            "pokemon": {
+              "type": "pixelmon:context_pokemon",
+              "key": "pixelmon:pokemon"
+            },
+            "spec": "falinks"
+          },
+          "name": "Catch Falinks for Luka",
+          "sprite": "pixelmon:textures/gui/research/speech_bubble.png",
+          "result": [
+            {
+              "type": "pixelmon:set_cooldown",
+              "player": {
+                "type": "pixelmon:context_player",
+                "key": "pixelmon:player"
+              },
+              "key": "safari-zone:completed/soldiers_like_none_other"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "name": "Soldiers like none other",
+  "tier": {
+    "name": "Twilight Keep",
+    "main_color": {
+      "red": 74,
+      "green": 67,
+      "blue": 95,
+      "alpha": 255
+    },
+    "accent_color": {
+      "red": 186,
+      "green": 162,
+      "blue": 216,
+      "alpha": 255
+    }
+  }
+}

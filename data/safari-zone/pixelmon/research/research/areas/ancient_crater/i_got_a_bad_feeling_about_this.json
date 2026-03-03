@@ -1,0 +1,56 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:pokemon_drop_item",
+          "required_amount": 1,
+          "condition": {
+            "type": "pixelmon:items_equal",
+            "first": {
+              "type": "pixelmon:context_item"
+            },
+            "second": {
+              "type": "pixelmon:constant_itemstack",
+              "value": {
+                "id": "minecraft:warped_roots",
+                "count": 1
+              }
+            }
+          },
+          "name": "Have Pokemon drop warped roots 1 time for the wounded Tyrunt",
+          "sprite": "pixelmon:textures/gui/research/question.png",
+          "result": [
+            {
+              "type": "pixelmon:set_cooldown",
+              "player": {
+                "type": "pixelmon:context_player",
+                "key": "pixelmon:player"
+              },
+              "key": "safari-zone:completed/i_got_a_bad_feeling_about_this"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "name": "I got a bad feeling about this...",
+  "tier": {
+    "name": "Ancient Crater",
+    "main_color": {
+      "red": 86,
+      "green": 132,
+      "blue": 84,
+      "alpha": 255
+    },
+    "accent_color": {
+      "red": 191,
+      "green": 218,
+      "blue": 157,
+      "alpha": 255
+    }
+  }
+}

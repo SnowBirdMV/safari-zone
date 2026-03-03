@@ -9,68 +9,43 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:on_cooldown",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
-                },
-                "cooldown_key": "safari-zone:completed/into_the_twilight",
-                "cooldown": 365000,
-                "unit": "DAYS"
-              }
-            }
-          ],
-          "results": {
-            "type": "pixelmon:constant",
-            "value": [
-              {
-                "type": "pixelmon:open_paged_dialogue",
-                "title": "Steward Vale",
-                "pages": [
-                  "Your declaration has already been recorded.",
-                  "Twilight Keep acknowledges your presence."
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "event": "pixelmon:right_click",
-          "conditions": [
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
                 "type": "pixelmon:has_research",
-                "research": "safari-zone:areas/twilight_keep/into_the_twilight",
+                "research": "safari-zone:areas/twilight_keep/a_blessing_from_the_lord",
                 "player": {
                   "type": "pixelmon:context_player",
                   "key": "pixelmon:player"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/a_blessing_from_the_lord",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
                 }
               }
             }
@@ -80,16 +55,9 @@
             "value": [
               {
                 "type": "pixelmon:open_paged_dialogue",
-                "title": "Steward Vale",
+                "title": "Viktor",
                 "pages": [
-                  "Welcome to the manor.",
-                  "I will record your arrival for our lord."
-                ]
-              },
-              {
-                "type": "pixelmon:console_execute_command",
-                "commands": [
-                  "research complete %player_name% safari-zone:areas/twilight_keep/into_the_twilight research"
+                  "You made it to the observatory. I will log your arrival with the team."
                 ]
               },
               {
@@ -98,7 +66,50 @@
                   "type": "pixelmon:context_player",
                   "key": "pixelmon:player"
                 },
-                "key": "safari-zone:completed/into_the_twilight"
+                "key": "safari-zone:progress/reached_twilight_observatory"
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:on_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "cooldown_key": "safari-zone:completed/a_blessing_from_the_lord",
+                "cooldown": 365000,
+                "unit": "DAYS"
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Viktor",
+                "pages": [
+                  "Your arrival was recorded. The observatory remains at your service."
+                ]
               }
             ]
           }
@@ -125,10 +136,9 @@
             "value": [
               {
                 "type": "pixelmon:open_paged_dialogue",
-                "title": "Steward Vale",
+                "title": "Viktor",
                 "pages": [
-                  "Selene Vire sends visitors here first.",
-                  "Please speak with her at Timberland Village Lab."
+                  "If you are seeking observatory access, declare yourself at the manor first."
                 ]
               }
             ]
@@ -161,14 +171,14 @@
   },
   "names": {
     "type": "pixelmon:constant",
-    "value": "Steward Vale"
+    "value": "Viktor"
   },
   "models": {
     "type": "pixelmon:constant",
     "value": {
       "type": "pixelmon:player",
       "slim": false,
-      "texture": "pixelmon:textures/steve/shopman.png"
+      "texture": "pixelmon:textures/steve/scientist_m.png"
     }
   },
   "ai_provider": {

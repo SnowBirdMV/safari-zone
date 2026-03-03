@@ -1,0 +1,131 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:capture_pokemon",
+          "condition": {
+            "type": "pixelmon:logical_or",
+            "conditions": [
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "bouffalant"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "hippopotas"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "hippowdon"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "numel"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "camerupt"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              },
+              {
+                "type": "pixelmon:interaction_condition",
+                "condition": {
+                  "type": "pixelmon:spec_matches",
+                  "spec": {
+                    "type": "pixelmon:constant_string",
+                    "value": "tauros"
+                  },
+                  "pokemon": {
+                    "type": "pixelmon:context_pokemon",
+                    "key": "pixelmon:pokemon"
+                  }
+                }
+              }
+            ]
+          },
+          "name": "Catch large land Pokemon from the mesa",
+          "sprite": "pixelmon:textures/gui/research/pokeball.png",
+          "result": [
+            {
+              "type": "pixelmon:set_cooldown",
+              "player": {
+                "type": "pixelmon:context_player",
+                "key": "pixelmon:player"
+              },
+              "key": "safari-zone:completed/documenting_the_west"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "name": "Documenting the west",
+  "tier": {
+    "name": "Scorched Mesa",
+    "main_color": {
+      "red": 194,
+      "green": 104,
+      "blue": 56,
+      "alpha": 255
+    },
+    "accent_color": {
+      "red": 231,
+      "green": 193,
+      "blue": 129,
+      "alpha": 255
+    }
+  }
+}

@@ -9,67 +9,43 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:on_cooldown",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
-                },
-                "cooldown_key": "safari-zone:completed/to_catch_a_train",
-                "cooldown": 365000,
-                "unit": "DAYS"
-              }
-            }
-          ],
-          "results": {
-            "type": "pixelmon:constant",
-            "value": [
-              {
-                "type": "pixelmon:open_paged_dialogue",
-                "title": "Rafe Calder",
-                "pages": [
-                  "Great. You are cleared for the Scorched Mesa route."
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "event": "pixelmon:right_click",
-          "conditions": [
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
                 "type": "pixelmon:has_research",
                 "research": "safari-zone:areas/scorched_mesa/to_catch_a_train",
                 "player": {
                   "type": "pixelmon:context_player",
                   "key": "pixelmon:player"
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/to_catch_a_train",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
                 }
               }
             }
@@ -93,6 +69,19 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
+                "type": "pixelmon:on_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "cooldown_key": "safari-zone:completed/to_catch_a_train",
+                "cooldown": 365000,
+                "unit": "DAYS"
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
                 "type": "pixelmon:string_compare",
                 "first": {
                   "type": "pixelmon:constant_string",
@@ -100,17 +89,6 @@
                 },
                 "second": {
                   "type": "pixelmon:hand_used"
-                }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:has_research",
-                "research": "safari-zone:areas/visitor_center/timberland_village_lab",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
                 }
               }
             }
@@ -122,14 +100,113 @@
                 "type": "pixelmon:open_paged_dialogue",
                 "title": "Rafe Calder",
                 "pages": [
-                  "The Scorched Mesa scientists need help.",
-                  "Meet their colleague at the train station to head farther west."
+                  "Great. You are cleared for the Scorched Mesa route."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/to_catch_a_train",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:has_research",
+                    "research": "safari-zone:areas/scorched_mesa/to_catch_a_train",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_or",
+                "conditions": [
+                  {
+                    "type": "pixelmon:interaction_condition",
+                    "condition": {
+                      "type": "pixelmon:has_research",
+                      "research": "safari-zone:areas/visitor_center/timberland_village_lab",
+                      "player": {
+                        "type": "pixelmon:context_player",
+                        "key": "pixelmon:player"
+                      }
+                    }
+                  },
+                  {
+                    "type": "pixelmon:interaction_condition",
+                    "condition": {
+                      "type": "pixelmon:on_cooldown",
+                      "player": {
+                        "type": "pixelmon:context_player",
+                        "key": "pixelmon:player"
+                      },
+                      "cooldown_key": "safari-zone:completed/timberland_village_lab",
+                      "cooldown": 365000,
+                      "unit": "DAYS"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Rafe Calder",
+                "pages": [
+                  "Boy, I don’t know what they've been doin’ out in the Mesa, but it sure ain’t good enough. My scientists out there need proper help.",
+                  "Go meetup with Arthur at the train station—he’ll take you further west to sort things out. Don’t mess this up."
                 ]
               },
               {
                 "type": "pixelmon:console_execute_command",
                 "commands": [
                   "research complete %player_name% safari-zone:areas/visitor_center/timberland_village_lab research",
+                  "research give %player_name% safari-zone:areas/scorched_mesa/scorched_mesa_area_collection",
                   "research give %player_name% safari-zone:areas/scorched_mesa/to_catch_a_train"
                 ]
               },
@@ -158,27 +235,20 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/to_catch_a_train",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
                 }
-              }
-            },
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
-                "type": "pixelmon:on_cooldown",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
-                },
-                "cooldown_key": "safari-zone:completed/timberland_village_lab",
-                "cooldown": 365000,
-                "unit": "DAYS"
               }
             },
             {
@@ -201,49 +271,6 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:logical_not",
-                "condition": {
-                  "type": "pixelmon:interaction_condition",
-                  "condition": {
-                    "type": "pixelmon:on_cooldown",
-                    "player": {
-                      "type": "pixelmon:context_player",
-                      "key": "pixelmon:player"
-                    },
-                    "cooldown_key": "safari-zone:completed/to_catch_a_train",
-                    "cooldown": 365000,
-                    "unit": "DAYS"
-                  }
-                }
-              }
-            }
-          ],
-          "results": {
-            "type": "pixelmon:constant",
-            "value": [
-              {
-                "type": "pixelmon:open_paged_dialogue",
-                "title": "Rafe Calder",
-                "pages": [
-                  "The Scorched Mesa scientists need help.",
-                  "Meet their colleague at the train station to head farther west."
-                ]
-              },
-              {
-                "type": "pixelmon:console_execute_command",
-                "commands": [
-                  "research give %player_name% safari-zone:areas/scorched_mesa/to_catch_a_train"
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "event": "pixelmon:right_click",
-          "conditions": [
-            {
-              "type": "pixelmon:interaction_condition",
-              "condition": {
                 "type": "pixelmon:string_compare",
                 "first": {
                   "type": "pixelmon:constant_string",
@@ -262,7 +289,7 @@
                 "type": "pixelmon:open_paged_dialogue",
                 "title": "Rafe Calder",
                 "pages": [
-                  "Report to Timberland Village Lab first, then return for western assignments."
+                  "Report to the main lab in Timberland Village first, then return for western assignments."
                 ]
               }
             ]

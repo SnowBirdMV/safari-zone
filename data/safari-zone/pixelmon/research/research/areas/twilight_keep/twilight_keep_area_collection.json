@@ -1,0 +1,200 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/into_the_twilight",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "Into the Twilight",
+          "sprite": "pixelmon:textures/gui/research/question.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/a_blessing_from_the_lord",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "A Blessing from the Lord",
+          "sprite": "pixelmon:textures/gui/research/speech_bubble.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/to_arms",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "To Arms!",
+          "sprite": "pixelmon:textures/gui/research/speech_bubble.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/totally_not_spells",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "Totally not spells...",
+          "sprite": "pixelmon:textures/gui/research/speech_bubble.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/supplies_while_lasted",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "Supplies while lasted",
+          "sprite": "pixelmon:textures/gui/research/speech_bubble.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/soldiers_like_none_other",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "Soldiers like none other",
+          "sprite": "pixelmon:textures/gui/research/speech_bubble.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/the_domain_of_darkness",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "The Domain of Darkness",
+          "sprite": "pixelmon:textures/gui/research/speech_bubble.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/hospitality_in_darkness",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "Hospitality in Darkness",
+          "sprite": "pixelmon:textures/gui/research/speech_bubble.png",
+          "result": [],
+          "required_amount": 1
+        },
+        {
+          "event": "pixelmon:player_tick",
+          "condition": {
+            "type": "pixelmon:on_cooldown",
+            "player": {
+              "type": "pixelmon:context_player",
+              "key": "pixelmon:player"
+            },
+            "cooldown_key": "safari-zone:completed/riske_cuisine",
+            "cooldown": 365000,
+            "unit": "DAYS"
+          },
+          "name": "Riské Cuisine",
+          "sprite": "pixelmon:textures/gui/research/speech_bubble.png",
+          "result": [],
+          "required_amount": 1
+        }
+      ],
+      "result": [
+        {
+          "type": "pixelmon:give_money",
+          "money": 6000
+        },
+        {
+          "type": "pixelmon:set_cooldown",
+          "player": {
+            "type": "pixelmon:context_player",
+            "key": "pixelmon:player"
+          },
+          "key": "safari-zone:completed/twilight_keep_area_collection"
+        }
+      ],
+      "result_sprites": [
+        {
+          "resource": "pixelmon:textures/gui/research/money_pouch.png",
+          "description": "₽6000"
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "tier": {
+    "name": "Twilight Keep",
+    "main_color": {
+      "red": 74,
+      "green": 67,
+      "blue": 95,
+      "alpha": 255
+    },
+    "accent_color": {
+      "red": 186,
+      "green": 162,
+      "blue": 216,
+      "alpha": 255
+    }
+  },
+  "name": "Twilight Keep area collection"
+}

@@ -128,12 +128,23 @@ emit_spawn_for_all_directions() {
 
   printf 'execute as @p at @s run npc spawnlinked safari-zone:areas/%s %s ~ %s\n' \
     "$preset_id" "$(to_rel_coord "$south_dx")" "$(to_rel_coord "$south_dz")" >> "$SOUTH_FILE"
+  printf 'execute as @p at @s positioned %s ~ %s as @e[type=pixelmon:npc,sort=nearest,limit=1,distance=..2] run data merge entity @s {PersistenceRequired:1b}\n' \
+    "$(to_rel_coord "$south_dx")" "$(to_rel_coord "$south_dz")" >> "$SOUTH_FILE"
+
   printf 'execute as @p at @s run npc spawnlinked safari-zone:areas/%s %s ~ %s\n' \
     "$preset_id" "$(to_rel_coord "$north_dx")" "$(to_rel_coord "$north_dz")" >> "$NORTH_FILE"
+  printf 'execute as @p at @s positioned %s ~ %s as @e[type=pixelmon:npc,sort=nearest,limit=1,distance=..2] run data merge entity @s {PersistenceRequired:1b}\n' \
+    "$(to_rel_coord "$north_dx")" "$(to_rel_coord "$north_dz")" >> "$NORTH_FILE"
+
   printf 'execute as @p at @s run npc spawnlinked safari-zone:areas/%s %s ~ %s\n' \
     "$preset_id" "$(to_rel_coord "$east_dx")" "$(to_rel_coord "$east_dz")" >> "$EAST_FILE"
+  printf 'execute as @p at @s positioned %s ~ %s as @e[type=pixelmon:npc,sort=nearest,limit=1,distance=..2] run data merge entity @s {PersistenceRequired:1b}\n' \
+    "$(to_rel_coord "$east_dx")" "$(to_rel_coord "$east_dz")" >> "$EAST_FILE"
+
   printf 'execute as @p at @s run npc spawnlinked safari-zone:areas/%s %s ~ %s\n' \
     "$preset_id" "$(to_rel_coord "$west_dx")" "$(to_rel_coord "$west_dz")" >> "$WEST_FILE"
+  printf 'execute as @p at @s positioned %s ~ %s as @e[type=pixelmon:npc,sort=nearest,limit=1,distance=..2] run data merge entity @s {PersistenceRequired:1b}\n' \
+    "$(to_rel_coord "$west_dx")" "$(to_rel_coord "$west_dz")" >> "$WEST_FILE"
 }
 
 emit_label_for_all_directions() {

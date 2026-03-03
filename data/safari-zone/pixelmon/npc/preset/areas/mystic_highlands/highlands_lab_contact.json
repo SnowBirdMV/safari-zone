@@ -9,6 +9,68 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
+                "type": "pixelmon:logical_or",
+                "conditions": [
+                  {
+                    "type": "pixelmon:interaction_condition",
+                    "condition": {
+                      "type": "pixelmon:has_research",
+                      "research": "safari-zone:areas/mystic_highlands/a_mystical_research",
+                      "player": {
+                        "type": "pixelmon:context_player",
+                        "key": "pixelmon:player"
+                      }
+                    }
+                  },
+                  {
+                    "type": "pixelmon:interaction_condition",
+                    "condition": {
+                      "type": "pixelmon:has_research",
+                      "research": "safari-zone:areas/visitor_center/timberland_village_lab",
+                      "player": {
+                        "type": "pixelmon:context_player",
+                        "key": "pixelmon:player"
+                      }
+                    }
+                  },
+                  {
+                    "type": "pixelmon:interaction_condition",
+                    "condition": {
+                      "type": "pixelmon:on_cooldown",
+                      "player": {
+                        "type": "pixelmon:context_player",
+                        "key": "pixelmon:player"
+                      },
+                      "cooldown_key": "safari-zone:completed/timberland_village_lab",
+                      "cooldown": 365000,
+                      "unit": "DAYS"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/a_mystical_research",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
+                }
+              }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
                 "type": "pixelmon:string_compare",
                 "first": {
                   "type": "pixelmon:constant_string",
@@ -18,7 +80,48 @@
                   "type": "pixelmon:hand_used"
                 }
               }
-            },
+            }
+          ],
+          "results": {
+            "type": "pixelmon:constant",
+            "value": [
+              {
+                "type": "pixelmon:open_paged_dialogue",
+                "title": "Researcher Ione",
+                "pages": [
+                  "Welcome to the Mystic Highlands Laboratory. We can take over from here.",
+                  "Your arrival confirms the assignment. Return when you are ready for deeper field work."
+                ]
+              },
+              {
+                "type": "pixelmon:console_execute_command",
+                "commands": [
+                  "research give %player_name% safari-zone:areas/mystic_highlands/a_mystical_research",
+                  "research complete %player_name% safari-zone:areas/mystic_highlands/a_mystical_research research"
+                ]
+              },
+              {
+                "type": "pixelmon:set_cooldown",
+                "player": {
+                  "type": "pixelmon:context_player",
+                  "key": "pixelmon:player"
+                },
+                "key": "safari-zone:completed/a_mystical_research"
+              },
+              {
+                "type": "pixelmon:message_player",
+                "messages": [
+                  {
+                    "text": "You completed research: A Mystical Research"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "event": "pixelmon:right_click",
+          "conditions": [
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
@@ -31,6 +134,19 @@
                 "cooldown": 365000,
                 "unit": "DAYS"
               }
+            },
+            {
+              "type": "pixelmon:interaction_condition",
+              "condition": {
+                "type": "pixelmon:string_compare",
+                "first": {
+                  "type": "pixelmon:constant_string",
+                  "value": "MAIN_HAND"
+                },
+                "second": {
+                  "type": "pixelmon:hand_used"
+                }
+              }
             }
           ],
           "results": {
@@ -40,8 +156,7 @@
                 "type": "pixelmon:open_paged_dialogue",
                 "title": "Researcher Ione",
                 "pages": [
-                  "Your Highlands visit is logged.",
-                  "Crystal research coordination is complete."
+                  "Crystal readings are stabilizing. If you need more assignments, check back with the Timberland lab."
                 ]
               }
             ]
@@ -53,59 +168,39 @@
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:string_compare",
-                "first": {
-                  "type": "pixelmon:constant_string",
-                  "value": "MAIN_HAND"
-                },
-                "second": {
-                  "type": "pixelmon:hand_used"
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:has_research",
+                    "research": "safari-zone:areas/mystic_highlands/a_mystical_research",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    }
+                  }
                 }
               }
             },
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
-                "type": "pixelmon:has_research",
-                "research": "safari-zone:areas/mystic_highlands/a_mystical_research",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
+                "type": "pixelmon:logical_not",
+                "condition": {
+                  "type": "pixelmon:interaction_condition",
+                  "condition": {
+                    "type": "pixelmon:on_cooldown",
+                    "player": {
+                      "type": "pixelmon:context_player",
+                      "key": "pixelmon:player"
+                    },
+                    "cooldown_key": "safari-zone:completed/a_mystical_research",
+                    "cooldown": 365000,
+                    "unit": "DAYS"
+                  }
                 }
               }
-            }
-          ],
-          "results": {
-            "type": "pixelmon:constant",
-            "value": [
-              {
-                "type": "pixelmon:open_paged_dialogue",
-                "title": "Researcher Ione",
-                "pages": [
-                  "Welcome to the Highlands lab.",
-                  "I am recording your arrival now."
-                ]
-              },
-              {
-                "type": "pixelmon:console_execute_command",
-                "commands": [
-                  "research complete %player_name% safari-zone:areas/mystic_highlands/a_mystical_research research"
-                ]
-              },
-              {
-                "type": "pixelmon:set_cooldown",
-                "player": {
-                  "type": "pixelmon:context_player",
-                  "key": "pixelmon:player"
-                },
-                "key": "safari-zone:completed/a_mystical_research"
-              }
-            ]
-          }
-        },
-        {
-          "event": "pixelmon:right_click",
-          "conditions": [
+            },
             {
               "type": "pixelmon:interaction_condition",
               "condition": {
@@ -127,8 +222,7 @@
                 "type": "pixelmon:open_paged_dialogue",
                 "title": "Researcher Ione",
                 "pages": [
-                  "For Highlands assignments, start with Dr. Lyra Quill.",
-                  "She works from Timberland Village Lab."
+                  "No active assignment is registered under your name. Speak with Dr. Lyra Quill in Timberland Village first."
                 ]
               }
             ]

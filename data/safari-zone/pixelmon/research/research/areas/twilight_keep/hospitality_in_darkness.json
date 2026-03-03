@@ -1,0 +1,56 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:pokemon_drop_item",
+          "required_amount": 1,
+          "condition": {
+            "type": "pixelmon:items_equal",
+            "first": {
+              "type": "pixelmon:context_item"
+            },
+            "second": {
+              "type": "pixelmon:constant_itemstack",
+              "value": {
+                "id": "minecraft:feather",
+                "count": 1
+              }
+            }
+          },
+          "name": "Bring feathers back to Charles",
+          "sprite": "pixelmon:textures/gui/research/speech_bubble.png",
+          "result": [
+            {
+              "type": "pixelmon:set_cooldown",
+              "player": {
+                "type": "pixelmon:context_player",
+                "key": "pixelmon:player"
+              },
+              "key": "safari-zone:completed/hospitality_in_darkness"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "name": "Hospitality in Darkness",
+  "tier": {
+    "name": "Twilight Keep",
+    "main_color": {
+      "red": 74,
+      "green": 67,
+      "blue": 95,
+      "alpha": 255
+    },
+    "accent_color": {
+      "red": 186,
+      "green": 162,
+      "blue": 216,
+      "alpha": 255
+    }
+  }
+}

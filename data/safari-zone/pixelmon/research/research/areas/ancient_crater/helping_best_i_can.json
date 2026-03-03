@@ -1,0 +1,56 @@
+{
+  "stages": [
+    {
+      "objectives": [
+        {
+          "event": "pixelmon:pokemon_drop_item",
+          "required_amount": 1,
+          "condition": {
+            "type": "pixelmon:items_equal",
+            "first": {
+              "type": "pixelmon:context_item"
+            },
+            "second": {
+              "type": "pixelmon:constant_itemstack",
+              "value": {
+                "id": "minecraft:jungle_log",
+                "count": 1
+              }
+            }
+          },
+          "name": "Have Pokemon drop jungle logs 1 time for the expedition firewood",
+          "sprite": "pixelmon:textures/gui/research/question.png",
+          "result": [
+            {
+              "type": "pixelmon:set_cooldown",
+              "player": {
+                "type": "pixelmon:context_player",
+                "key": "pixelmon:player"
+              },
+              "key": "safari-zone:completed/helping_best_i_can"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "abandonable": false,
+  "repeatable": false,
+  "unique": true,
+  "name": "Helping best I can",
+  "tier": {
+    "name": "Ancient Crater",
+    "main_color": {
+      "red": 86,
+      "green": 132,
+      "blue": 84,
+      "alpha": 255
+    },
+    "accent_color": {
+      "red": 191,
+      "green": 218,
+      "blue": 157,
+      "alpha": 255
+    }
+  }
+}

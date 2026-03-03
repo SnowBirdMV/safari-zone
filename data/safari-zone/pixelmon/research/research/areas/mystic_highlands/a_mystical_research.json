@@ -17,5 +17,20 @@
   "abandonable": false,
   "repeatable": false,
   "unique": true,
-  "name": "A Mystical Research (Mystic Highlands Map Progression)"
+  "name": "A Mystical Research (Mystic Highlands Map Progression)",
+  "tier": {
+    "name": "Timberland falls",
+    "main_color": {
+      "red": 95,
+      "green": 165,
+      "blue": 96,
+      "alpha": 255
+    },
+    "accent_color": {
+      "red": 225,
+      "green": 196,
+      "blue": 124,
+      "alpha": 255
+    }
+  }
 }
